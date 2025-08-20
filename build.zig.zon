@@ -23,8 +23,8 @@
             .hash = "N-V-__8AAKfbpwAXnUJ6TJEaqZGWgp6F_8OhiLErejRxQ7Y5",
         },
         .libpng = .{
-            .url = "git+https://github.com/allyourcodebase/libpng#2ddc2be536ab6f4e8a70789139df26a64fc472a2",
-            .hash = "libpng-1.6.50-oiaFGscqAAAigJQnEJ_Q7MYrdp73mhWYBNqc8-FQ2xwZ",
+            .url = "git+https://github.com/allyourcodebase/libpng#d512607515687aa60b975d6a191aef9a692dac87",
+            .hash = "libpng-1.6.50-oiaFGt4qAAB_vzrtvz9hA7_UiBW4arSaMVGc7ekKMCZ2",
         },
         .zlib = .{
             .url = "git+https://github.com/allyourcodebase/zlib#8a8161babd4b79ea47d5a5976337a96ac4a5666b",

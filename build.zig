@@ -30,9 +30,9 @@ pub fn build(b: *std.Build) !void {
         lib.linkLibrary(libpng_dep.artifact("png"));
     }
 
-    var flags = std.ArrayList([]const u8).init(b.allocator);
-    defer flags.deinit();
-    try flags.appendSlice(&.{
+    var flags: std.ArrayListUnmanaged([]const u8) = .empty;
+    defer flags.deinit(b.allocator);
+    try flags.appendSlice(b.allocator, &.{
         "-DFT2_BUILD_LIBRARY",
 
         "-DFT_CONFIG_OPTION_SYSTEM_ZLIB=1",
@@ -42,7 +42,7 @@ pub fn build(b: *std.Build) !void {
 
         "-fno-sanitize=undefined",
     });
-    if (libpng_enabled) try flags.append("-DFT_CONFIG_OPTION_USE_PNG=1");
+    if (libpng_enabled) try flags.append(b.allocator, "-DFT_CONFIG_OPTION_USE_PNG=1");
 
     lib.addCSourceFiles(.{
         .root = upstream.path(""),
